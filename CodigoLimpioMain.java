@@ -1,4 +1,4 @@
-public class CodigoLimpioMain {
+public class ProductoMain {
    public static void main(String[] args) {
        Producto p1 = new Producto("Portátil", 750, 10);
        p1.mostrarInformacion();
