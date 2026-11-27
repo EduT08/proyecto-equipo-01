@@ -7,11 +7,13 @@ El proyecto consiste en el cálculo y muestra de información de stock de produc
 * **Lucía** - Desarrollo Web
 * **Erika** - Pruebas y Documentación
 ## Mejoras realizadas en el código (Antes y Después)
-**Antes**
-* Código Original
+### **Antes** ###
+* ### Código Original ###
+
      -Class:
+     ```js
         package original;
-public class Producto {
+        public class Producto {
   
    // ATRIBUTOS
    private String nombre;
@@ -34,9 +36,8 @@ public class Producto {
        }
        this.stock = stock;
    }
-  
-  
-,   //SETTER Y GETTER
+
+   //SETTER Y GETTER
    public String getNombre() {
 		return nombre;
 	}
@@ -80,10 +81,14 @@ public class Producto {
 	public String mostrarInformación() {
 		return "\nNombre=" + nombre + " \nPrecio=" + precio + "\nStock=" + stock + "";
 	}
-}
+    }
 
-    -Main:
-            package original;
+·
+-Main:
+·
+
+```js
+package original;
 public class Mainproducto {
    public static void main(String[] args) {
    	
@@ -109,12 +114,16 @@ public class Mainproducto {
        System.out.println("INFORMACIÓN FINAL");
        System.out.println(p1.mostrarInformación());
    }
-}
+```
 
-**Después**
-* Método 1 de refactorización de código Java (cambiar nombres):
+### **Después** ###
+
+* ### Método 1 de refactorización de código Java (cambiar nombres): ###
+
     -Class:
-        package refactorizado.rename;
+    
+```js
+package refactorizado.rename;
 public class Producto {
    // ATRIBUTOS
    private String nombreProducto;
@@ -184,8 +193,13 @@ public class Producto {
    }
 }
 
+```
+
+·
     -Main:
-        package refactorizado.rename;
+·
+```js
+package refactorizado.rename;
 public class ProductoMain {
    public static void main(String[] args) {
        // CREAMOS OBJETO
@@ -210,13 +224,12 @@ public class ProductoMain {
        System.out.println(producto1.obtenerInformacion());
    }
 }
+```
 
+* ### Método 2 de refactorización de código Java (crear constantes): ###
 
-
-
-
-* Método 2 de refactorización de código Java (crear constantes):
     -Class:
+```js
 package refactorizado.ExtractConstant;
 public class Producto {
    // CONSTANTES
@@ -293,8 +306,11 @@ public class Producto {
                + "\nStock=" + stock;
    }
 }
-
+```
+·
     -Main:
+·
+```js
 package refactorizado.ExtractConstant;
 public class Mainproducto {
    // CONSTANTES
@@ -331,10 +347,13 @@ public class Mainproducto {
        System.out.println(p1.mostrarInformación());
    }
 }
+```
 
-* Método 3 de refactorización de código Java (dividir métodos):
-    -Class
-        package refactorizado.ExtractMethod;
+* ### Método 3 de refactorización de código Java (dividir métodos): ###
+
+    -Class:
+```js
+package refactorizado.ExtractMethod;
 public class Producto {
    // CONSTANTES
    private static final String NOMBRE_INICIAL = "";
@@ -426,8 +445,11 @@ public class Producto {
                + "\nStock=" + stock;
    }
 }
-
-    -Main
+```
+·
+    -Main:
+·
+```js
 package refactorizado.ExtractMethod;
 public class Mainproducto {
    // CONSTANTES
@@ -473,6 +495,7 @@ public class Mainproducto {
        System.out.println(p1.mostrarInformación());
    }
 }
+```
 
 * Rename: hemos cambiado los nombres de algunas variables y métodos para que sean más claros y fáciles de entender.
 
