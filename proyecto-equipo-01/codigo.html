@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>::.CÓDIGO.::</title>
+    <link rel="stylesheet" href="codigo.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h3>Proyecto Equipo 01</h3>
+        </nav>
+        <div>
+            <h5>ENTORNOS DE DESARROLLO</h5>
+            <h1>PROGRAMA</h1>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h2>Código del programa</h2>
+            <h3>Class:</h3>
+            <pre>package original;
+public class Producto {
+  
+   // ATRIBUTOS
+   private String nombre;
+   private double precio;
+   private int stock;
+  
+   //CONSTRUCTOR VACÍO
+   public Producto() {
+   	this.nombre = "";
+   	this.precio = 0;
+   	this.stock = 0;
+   }
+   // CONSTRUCTOR
+   public Producto(String nombre, double precio, int stock) {
+       this.nombre = nombre;
+       if (precio &gt;= 0) {
+           this.precio = precio;
+       } else {
+           this.precio = 0;
+       }
+       this.stock = stock;
+   }
+  
+  
+   //SETTER Y GETTER
+   public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public double getPrecio() {
+		return precio;
+	}
+	public void setPrecio(double precio) {
+		this.precio = precio;
+	}
+	public int getStock() {
+		return stock;
+	}
+	public void setStock(int stock) {
+		this.stock = stock;
+	}
+	
+	// MÉTODO PARA VENDER PRODUCTOS
+   public void vender(int cantidad) {
+       if (cantidad &lt;= 0) {
+           System.out.println("La cantidad debe ser positiva.");
+       } else if (cantidad &gt; stock) {
+           System.out.println("No hay suficiente stock.");
+       } else {
+           stock -= cantidad;
+           System.out.println("Venta realizada correctamente.");
+       }
+   }
+   // MÉTODO PARA REPONER PRODUCTOS
+   public void reponer(int cantidad) {
+       if (cantidad &lt;= 0) {
+           System.out.println("La cantidad debe ser positiva.");
+       } else {
+           stock += cantidad;
+           System.out.println("Stock repuesto correctamente.");
+       }
+   }
+   // MÉTODO PARA MOSTRAR INF.
+	public String mostrarInformación() {
+		return "\nNombre=" + nombre + " \nPrecio=" + precio + "\nStock=" + stock + "";
+	}
+}
+</pre>
+            <h3>Main: </h3>
+            <pre>package original;
+public class Mainproducto {
+   public static void main(String[] args) {
+   	
+   	//CREAMOS OBJETO
+       Producto p1 = new Producto("Portátil", 750, 10);
+      
+       // MOSTRAR INFORMACIÓN INICIAL
+       System.out.println("INFORMACIÓN INICIAL");
+       System.out.println(p1.mostrarInformación());
+       // VENDER PRODUCTOS
+       System.out.println("\n--- VENDER ---");
+       p1.vender(3);
+       // MOSTRAR INFORMACIÓN DESPUÉS DE VENDER
+       System.out.println(p1.mostrarInformación());
+       // REPONER PRODUCTOS
+       System.out.println("\n--- REPONER ---");
+       p1.reponer(5);
+       // MOSTRAR INFORMACIÓN FINAL
+       System.out.println(p1.mostrarInformación());
+       // PROBAR UNA VENTA CON MÁS STOCK DEL DISPONIBLE
+       System.out.println("\n--- PROBAMOS UNA VENTA CON MÁS STOCK DEL DISPONIBLE ---");
+       p1.vender(20);
+       System.out.println("INFORMACIÓN FINAL");
+       System.out.println(p1.mostrarInformación());
+   }
+}
+</pre>
+        </section>
+
+        <section>
+            <h2>Ejecución</h2>
+            <pre>INFORMACIÓN INICIAL
+
+Nombre=Portátil
+Precio=750.0
+Stock=10
+
+--- VENDER ---
+Venta realizada correctamente.
+
+Nombre=Portátil
+Precio=750.0
+Stock=7
+
+--- REPONER ---
+Stock repuesto correctamente.
+
+Nombre=Portátil
+Precio=750.0
+Stock=12
+
+--- PROBAMOS UNA VENTA CON MÁS STOCK DEL DISPONIBLE ---
+No hay suficiente stock.
+INFORMACIÓN FINAL
+
+Nombre=Portátil
+Precio=750.0
+Stock=12</pre>
+        </section>
+    </main>
+
+    <footer>
+        <p>Proyecto Equipo 01 · Entornos de Desarrollo</p>
+    </footer>
+</body>
+</html>
