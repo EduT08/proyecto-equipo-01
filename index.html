@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Equipo 01</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h3>Proyecto Equipo 01</h3>
+        </nav>
+        <div>
+            <h5>ENTORNOS DE DESARROLLO</h5>
+            <h1>Gestión de productos de una tienda de informática</h1>
+            <p>
+                Programa en Java que controla el nombre, el precio y el stock de un
+                producto, y permite vender y reponer unidades. Código original
+                refactorizado con Rename, Extract Constant y Extract Method.
+            </p>
+            <a href="codigo.html">Ver qué hace el programa</a>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h2>Explicación del programa</h2>
+            <p>La clase Producto tiene tres atributos (nombre, precio, stock) y tres métodos.</p>
+            <div>
+                <article>
+                    <h3>vender(int cantidad)</h3>
+                    <p>Resta unidades del stock. No permite vender más de las que hay ni cantidades no positivas.</p>
+                </article>
+                <article>
+                    <h3>reponer(int cantidad)</h3>
+                    <p>Suma unidades al stock. No permite reponer cantidades negativas ni cero.</p>
+                </article>
+                <article>
+                    <h3>mostrarInformación()</h3>
+                    <p>Devuelve el nombre, el precio y el stock disponible para mostrarlos por pantalla.</p>
+                </article>
+            </div>
+        </section>
+
+        <section>
+            <h2>¿Qué hace el programa?</h2>
+            <pre>INFORMACIÓN INICIAL
+
+Nombre=Portátil
+Precio=750.0
+Stock=10
+
+--- VENDER ---
+Venta realizada correctamente.
+
+Nombre=Portátil
+Precio=750.0
+Stock=7
+
+--- REPONER ---
+Stock repuesto correctamente.
+
+Nombre=Portátil
+Precio=750.0
+Stock=12
+
+--- PROBAMOS UNA VENTA CON MÁS STOCK DEL DISPONIBLE ---
+No hay suficiente stock.
+INFORMACIÓN FINAL
+
+Nombre=Portátil
+Precio=750.0
+Stock=12</pre>
+        </section>
+
+        <section>
+            <h2>Mejoras de refactorización</h2>
+            <div>
+                <article>
+                    <h3>1. Rename</h3>
+                    <p>Hemos cambiado los nombres de variables y métodos para que se entiendan mejor. Por ejemplo, nombre, precio y stock pasan a ser nombreProducto, precioProducto y cantidadStock. Los métodos vender(), reponer() y mostrarInformación() pasan a llamarse realizarVenta(), reponerStock() y obtenerInformacion().</p>
+                </article>
+                <article>
+                    <h3>2. Extract Constant</h3>
+                    <p>Hemos guardado en constantes (static final) los valores y mensajes que se repetían en el código, para no escribirlos varias veces. Por ejemplo, MENSAJE_STOCK = "No hay suficiente stock." y MENSAJE_CANTIDAD = "La cantidad debe ser positiva.". También hemos creado constantes para los valores iniciales del producto y para los datos del main.</p>
+                </article>
+                <article>
+                    <h3>3. Extract Method</h3>
+                    <p>Hemos dividido el código en métodos más pequeños para que cada uno haga una sola tarea. En la clase Producto hemos creado descontarStock(), aumentarStock() y mostrarMensaje(). En el main hemos creado crearProducto(), mostrarInformacionInicial(), realizarVenta(), realizarReposicion() y probarVentaExcesiva().</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="roles">
+            <h2>Nuestro equipo</h2>
+            <div>
+                <article>
+                    <h4>Eduardo Trigeros</h4>
+                    <p>Líder de Git</p>
+                </article>
+                <article>
+                    <h4>Candela Barrera</h4>
+                    <p>Refactorización Java</p>
+                </article>
+                <article>
+                    <h4>Lucía Burgos</h4>
+                    <p>Desarrollo Web</p>
+                </article>
+                <article>
+                    <h4>Erika Bermudo</h4>
+                    <p>Pruebas y Documentación</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Proyecto Equipo 01 · Entornos de Desarrollo</p>
+    </footer>
+</body>
+</html>
